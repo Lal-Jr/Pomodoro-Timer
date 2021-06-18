@@ -1,7 +1,12 @@
 import "./App.css";
+import Pomodoro from "./Components/Pomodoro/Pomodoro.components";
 
 function App() {
-	return <div>Hello</div>;
+	return (
+		<>
+			<Pomodoro />
+		</>
+	);
 }
 
 export default App;
