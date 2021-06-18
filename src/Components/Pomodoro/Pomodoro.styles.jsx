@@ -17,4 +17,5 @@ export const Title = styled.h1`
 	place-items: center;
 	height: 15%;
 	color: #fff;
+	text-transform: uppercase;
 `;
