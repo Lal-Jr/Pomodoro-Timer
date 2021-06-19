@@ -1,10 +1,11 @@
 import React from "react";
-import { TimeContainer, Title } from "./Time.styles";
+import { TimeContainer, Detail, Minutes } from "./Time.styles";
 
 function Time() {
 	return (
 		<TimeContainer>
-			<Title>Time</Title>
+			<Detail>Session</Detail>
+			<Minutes>25:00</Minutes>
 		</TimeContainer>
 	);
 }

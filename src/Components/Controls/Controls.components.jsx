@@ -1,10 +1,11 @@
 import React from "react";
-import { ControlsContainer, Title } from "./Controls.styles";
+import { ControlsContainer, Button } from "./Controls.styles";
 
 const Controls = () => {
 	return (
 		<ControlsContainer>
-			<Title>Controls</Title>
+			<Button>Start</Button>
+			<Button>Reset</Button>
 		</ControlsContainer>
 	);
 };
