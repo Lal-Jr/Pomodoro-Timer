@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/App.css"],"names":[],"mappings":"AAAA,EACC,qBAAsB,CACtB,QAAS,CACT,SAAU,CACV,eAAgB,CAChB,8BACD","file":"main.01d4fb0d.chunk.css","sourcesContent":["* {\n\tbox-sizing: border-box;\n\tmargin: 0;\n\tpadding: 0;\n\toverflow: hidden;\n\tfont-family: \"Cabin\", sans-serif;\n}\n"]}
