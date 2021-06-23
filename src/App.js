@@ -1,12 +1,27 @@
 import "./App.css";
-import Pomodoro from "./Components/Pomodoro/Pomodoro.components";
+import React from "react";
+import Options from "../Options/Options.components";
+import Time from "../Time/Time.components";
+import { PomodoroContainer, Title } from "./Pomodoro.styles";
 
-function App() {
+const App = () => {
+	const audioBeep = createRef();
+
 	return (
 		<>
-			<Pomodoro />
+			<PomodoroContainer>
+				<Title>Pomodoro Timer</Title>
+				<Options />
+				<Time />
+				<audio
+					id="beep"
+					preload="auto"
+					src="https://goo.gl/65cBl1"
+					ref={audioBeep}
+				/>
+			</PomodoroContainer>
 		</>
 	);
-}
+};
 
 export default App;

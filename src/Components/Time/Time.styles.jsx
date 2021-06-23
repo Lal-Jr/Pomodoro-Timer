@@ -12,10 +12,16 @@ export const TimeContainer = styled.div`
 	border: 2px solid #fff;
 `;
 
-export const Detail = styled.h3`
+export const Label = styled.h3`
 	font-size: 36px;
 `;
 
-export const Minutes = styled.h1`
-	font-size: 96px;
+export const Timer = styled.div`
+	font-size: 56px;
+	display: flex;
+	align-items: center;
 `;
+
+export const Minutes = styled.h1``;
+
+export const Seconds = styled.h1``;

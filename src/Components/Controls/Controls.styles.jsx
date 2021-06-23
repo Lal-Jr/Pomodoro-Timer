@@ -10,9 +10,13 @@ export const ControlsContainer = styled.div`
 `;
 
 export const Button = styled.div`
+	display: grid;
+	place-items: center;
 	background: transparent;
+	min-width: 100px;
 	padding: 10px 20px;
 	border: 3px solid #000;
+	border-radius: 50px;
 	font-size: 24px;
 	cursor: pointer;
 	user-select: none;
