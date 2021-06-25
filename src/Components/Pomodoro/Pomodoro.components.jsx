@@ -5,7 +5,6 @@ import Controls from "../Controls/Controls.components";
 import { PomodoroContainer, Title } from "./Pomodoro.styles";
 
 const Pomodoro = () => {
-	// const audioBeep = React.createRef();
 	// const url = "https://goo.gl/65cBl1";
 	// const audioBeep = new Audio(url);
 
@@ -66,9 +65,12 @@ const Pomodoro = () => {
 				setSecond(computedSecond);
 				setMinute(computedMinute);
 
-				counter > 0 && setCounter((counter) => counter - 1);
+				counter > -1 && setCounter((counter) => counter - 1);
 
 				if (counter === 0) {
+					// audioBeep.play();
+					console.log("Audio Will Play Here");
+				} else if (counter === -1) {
 					if (timeLabel === "Session") {
 						setTimeLabel("Break");
 						setCounter(breakLength * 60);
@@ -107,13 +109,8 @@ const Pomodoro = () => {
 					setMinute={setMinute}
 					isActive={isActive}
 					setSessionLength={setSessionLength}
+					setTimeLabel={setTimeLabel}
 				/>
-				{/* <audio
-					id="beep"
-					preload="auto"
-					src="https://goo.gl/65cBl1"
-					ref={audioBeep}
-				/> */}
 			</PomodoroContainer>
 		</>
 	);

@@ -6,6 +6,10 @@ export const OptionsContainer = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 	color: #fff;
+
+	@media (max-width: 420px) {
+		height: 20%;
+	}
 `;
 
 export const Option = styled.div`
@@ -14,6 +18,14 @@ export const Option = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	@media (max-width: 600px) {
+		margin-inline: 30px;
+	}
+
+	@media (max-width: 420px) {
+		margin-inline: 15px;
+	}
 `;
 
 export const OptionWrapper = styled.div`

@@ -7,6 +7,18 @@ export const ControlsContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	color: #fff;
+
+	@media (max-width: 1200px) {
+		width: 30%;
+	}
+
+	@media (max-width: 768px) {
+		width: 40%;
+	}
+
+	@media (max-width: 400px) {
+		width: 60%;
+	}
 `;
 
 export const Button = styled.div`
@@ -20,4 +32,10 @@ export const Button = styled.div`
 	font-size: 24px;
 	cursor: pointer;
 	user-select: none;
+
+	@media (max-width: 768px) {
+		font-size: 18px;
+		padding: 7.5px 15px;
+		min-width: 50px;
+	}
 `;
