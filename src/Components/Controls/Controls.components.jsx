@@ -8,6 +8,7 @@ const Controls = ({
 	setMinute,
 	isActive,
 	setSessionLength,
+	setBreakLength,
 	setTimeLabel,
 }) => {
 	const resetTimer = () => {
@@ -16,6 +17,7 @@ const Controls = ({
 		setSecond("00");
 		setMinute(25);
 		setSessionLength(25);
+		setBreakLength(5);
 		setTimeLabel("Session");
 	};
 

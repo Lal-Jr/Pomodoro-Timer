@@ -8,6 +8,11 @@ const Pomodoro = () => {
 	// const url = "https://goo.gl/65cBl1";
 	// const audioBeep = new Audio(url);
 
+	// const AudioPlay = useCallBack(() => {
+	// 	audioBeep.play();
+	// 	console.log("Audio Will Play Here");
+	// });
+
 	const [breakLength, setBreakLength] = useState(5);
 	const [sessionLength, setSessionLength] = useState(25);
 	const [second, setSecond] = useState("00");
@@ -17,13 +22,21 @@ const Pomodoro = () => {
 	const [timeLabel, setTimeLabel] = useState("Session");
 
 	const handleBreakIncrement = () => {
-		if (breakLength < 30 && !isActive) {
+		if (
+			breakLength < 30 &&
+			!isActive &&
+			counter === (0 || sessionLength * 60)
+		) {
 			setBreakLength((prevBreakLength) => prevBreakLength + 1);
 		}
 	};
 
 	const handleSessionIncrement = () => {
-		if (sessionLength < 60 && !isActive) {
+		if (
+			sessionLength < 60 &&
+			!isActive &&
+			counter === (0 || sessionLength * 60)
+		) {
 			setSessionLength((prevSessionLength) => prevSessionLength + 1);
 			setMinute((prevMinute) => prevMinute + 1);
 			setCounter((prevCounter) => prevCounter + 60);
@@ -32,13 +45,21 @@ const Pomodoro = () => {
 	};
 
 	const handleBreakDecrement = () => {
-		if (breakLength > 1 && !isActive) {
+		if (
+			breakLength > 1 &&
+			!isActive &&
+			counter === (0 || sessionLength * 60)
+		) {
 			setBreakLength((prevBreakLength) => prevBreakLength - 1);
 		}
 	};
 
 	const handleSessionDecrement = () => {
-		if (sessionLength > 1 && !isActive) {
+		if (
+			sessionLength > 1 &&
+			!isActive &&
+			counter === (0 || sessionLength * 60)
+		) {
 			setSessionLength((prevSessionLength) => prevSessionLength - 1);
 			setMinute((prevMinute) => prevMinute - 1);
 			setCounter((prevCounter) => prevCounter - 60);
@@ -62,15 +83,16 @@ const Pomodoro = () => {
 						? `0${minuteCounter}`
 						: minuteCounter;
 
-				setSecond(computedSecond);
-				setMinute(computedMinute);
+				if (computedSecond === "00") {
+					setSecond(59);
+					setMinute(computedMinute - 1);
+				} else {
+					setSecond(computedSecond - 1);
+					setMinute(computedMinute);
+				}
 
-				counter > -1 && setCounter((counter) => counter - 1);
-
+				counter > 0 && setCounter((counter) => counter - 1);
 				if (counter === 0) {
-					// audioBeep.play();
-					console.log("Audio Will Play Here");
-				} else if (counter === -1) {
 					if (timeLabel === "Session") {
 						setTimeLabel("Break");
 						setCounter(breakLength * 60);
@@ -109,6 +131,7 @@ const Pomodoro = () => {
 					setMinute={setMinute}
 					isActive={isActive}
 					setSessionLength={setSessionLength}
+					setBreakLength={setBreakLength}
 					setTimeLabel={setTimeLabel}
 				/>
 			</PomodoroContainer>
