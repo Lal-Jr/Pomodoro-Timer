@@ -2,17 +2,19 @@ import React from "react";
 import { ControlsContainer, Button } from "./Controls.styles";
 
 const Controls = ({
-	isActive,
 	setIsActive,
 	setCounter,
 	setSecond,
 	setMinute,
+	isActive,
+	setSessionLength,
 }) => {
-	const stopTimer = () => {
+	const resetTimer = () => {
 		setIsActive(false);
 		setCounter(1500);
 		setSecond("00");
-		setMinute("25");
+		setMinute(25);
+		setSessionLength(25);
 	};
 
 	return (
@@ -20,7 +22,7 @@ const Controls = ({
 			<Button onClick={() => setIsActive(!isActive)}>
 				{isActive ? "Stop" : "Start"}
 			</Button>
-			<Button onClick={() => stopTimer()}>Reset</Button>
+			<Button onClick={() => resetTimer()}>Reset</Button>
 		</ControlsContainer>
 	);
 };
